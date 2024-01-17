@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="tv_msg">7回読みましょう</string>
+    
+    <string-array name="lv_readrecord">
+        <item>https://news.google.com</item>
+        <item>https://translate.google.co.jp</item>
+    </string-array>
 </resources>
