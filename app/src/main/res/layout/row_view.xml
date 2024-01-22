@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:src="@android:drawable/ic_menu_gallery"
-        android:contentDescription="" />
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/title"
