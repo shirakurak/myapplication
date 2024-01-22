@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.widget.ListView
 import androidx.activity.ComponentActivity
 //import androidx.activity.compose.setContent
 //import androidx.compose.foundation.layout.fillMaxSize
@@ -10,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myapplication.adapter.CustomAdapter
+import com.example.myapplication.model.Data
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,6 +27,18 @@ class MainActivity : ComponentActivity() {
 //            }
 //        }
         setContentView(R.layout.activity_main) // デザイン確認のため追加（同時に、上記はコメントアウト）
+
+        var dataList = arrayListOf<Data>()
+        for (i in 0..5) {
+            dataList.add(Data().apply {
+                title = "${i}番目のタイトル"
+                text = "${i}番目のテキスト"
+            })
+        }
+
+        val adapter = CustomAdapter(this, dataList)
+        val customListView = findViewById<ListView>(R.id.custom_list_view)
+        customListView.adapter = adapter
     }
 }
 
