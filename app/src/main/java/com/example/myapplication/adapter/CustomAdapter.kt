@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.myapplication.R
@@ -21,6 +22,12 @@ class CustomAdapter(context: Context, list: ArrayList<Data>) : ArrayAdapter<Data
         view?.findViewById<ImageView>(R.id.user_icon).apply { data.icon }
         view?.findViewById<TextView>(R.id.title)?.apply { text = data.title }
         view?.findViewById<TextView>(R.id.text)?.apply { text = data.text }
+
+        val newButton = view?.findViewById<Button>(R.id.button)
+        newButton?.text = data.buttonText
+        newButton?.setOnClickListener {
+            data.buttonClickAction?.invoke()
+        }
         return view!!
     }
 }

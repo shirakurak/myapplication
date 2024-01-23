@@ -33,6 +33,10 @@ class MainActivity : ComponentActivity() {
             dataList.add(Data().apply {
                 title = "${i}番目のタイトル"
                 text = "${i}番目のテキスト"
+                buttonText = "ボタン${i}"
+                buttonClickAction = {
+                    // ボタンがクリックされた時の処理
+                }
             })
         }
 
